@@ -12,10 +12,10 @@ from utils import visualization_utils as vis_util
 
 # Variables
 total_passed_vehicle = 0  # using it to count vehicles
-count=0
+
 def cumulative_object_counting_x_axis(input_video, detection_graph, category_index, is_color_recognition_enabled, fps, width, height, roi, deviation):
         total_passed_vehicle = 0
-       
+        count=0
         #initialize .csv
         with open('object_counting_report.csv', 'w') as f:
                 writer = csv.writer(f)  
@@ -136,7 +136,7 @@ def cumulative_object_counting_x_axis(input_video, detection_graph, category_ind
 
 def cumulative_object_counting_y_axis(input_video, detection_graph, category_index, is_color_recognition_enabled, fps, width, height, roi, deviation):
         total_passed_vehicle = 0        
-
+        count=0
         #initialize .csv
         with open('object_counting_report.csv', 'w') as f:
                 writer = csv.writer(f)  
