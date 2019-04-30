@@ -12,7 +12,7 @@ from utils import visualization_utils as vis_util
 
 # Variables
 total_passed_vehicle = 0  # using it to count vehicles
-
+count=0
 def cumulative_object_counting_x_axis(input_video, detection_graph, category_index, is_color_recognition_enabled, fps, width, height, roi, deviation):
         total_passed_vehicle = 0
        
@@ -118,9 +118,10 @@ def cumulative_object_counting_x_axis(input_video, detection_graph, category_ind
                     )
 
                 output_movie.write(input_frame)
-                print ("writing frame")
+                #print ("writing frame")
                 #cv2.imshow('object counting',input_frame)
-
+                count=count+1
+                cv2.imwrite(os.path.join('screenshots', 'ss_' + str(count) + '.png'), frame)
                 if cv2.waitKey(1) & 0xFF == ord('q'):
                         break
 
@@ -237,9 +238,10 @@ def cumulative_object_counting_y_axis(input_video, detection_graph, category_ind
                     )
 
                 output_movie.write(input_frame)
-                print ("writing frame")
+                #print ("writing frame")
                 #cv2.imshow('object counting',input_frame)
-
+                count=count+1
+                cv2.imwrite(os.path.join('screenshots', 'ss_' + str(count) + '.png'), frame) 
                 if cv2.waitKey(1) & 0xFF == ord('q'):
                         break
 
@@ -327,9 +329,10 @@ def object_counting(input_video, detection_graph, category_index, is_color_recog
                     cv2.putText(input_frame, counting_mode, (10, 35), font, 0.8, (0,255,255),2,cv2.FONT_HERSHEY_SIMPLEX)
                 
                 output_movie.write(input_frame)
-                print ("writing frame")
+                #print ("writing frame")
                 #cv2.imshow('object counting',input_frame)
-
+                count=count+1
+                cv2.imwrite(os.path.join('screenshots', 'ss_' + str(count) + '.png'), frame)
                 if cv2.waitKey(1) & 0xFF == ord('q'):
                         break
 
@@ -418,8 +421,9 @@ def targeted_object_counting(input_video, detection_graph, category_index, is_co
                 #cv2.imshow('object counting',input_frame)
 
                 output_movie.write(input_frame)
-                print ("writing frame")
-
+                #print ("writing frame")
+                count=count+1
+                cv2.imwrite(os.path.join('screenshots', 'ss_' + str(count) + '.png'), frame)
                 if cv2.waitKey(1) & 0xFF == ord('q'):
                         break
 
